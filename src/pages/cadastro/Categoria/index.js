@@ -4,129 +4,101 @@ import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 
 function CadastroCategoria() {
+  const [categorias, SetCategorias] = useState([]);
+
   const valoresIniciais = {
     nome: '',
     descricao: '',
     cor: '',
   }
-  const [categorias, setCategorias] = useState([]);
-  const [values, setValues] = useState(valoresIniciais);
+  const [valores, setValores] = useState(valoresIniciais);
 
-
-  function setValue(chave, valor) {
-    // chave: nome, descricao, bla, bli
-    setValues({
-      ...values,
-      [chave]: valor, // nome: 'valor'
+  function setValor(chave, valor) {
+    setValores({
+      ...valores,
+      [chave]: valor,
     })
   }
-
-  function handleChange(infosDoEvento) {
-    setValue(
+  function atualizaNome(infosDoEvento) {
+    setValor(
       infosDoEvento.target.getAttribute('name'),
-      infosDoEvento.target.value
-    );
+      infosDoEvento.target.value);
+      
+    // const { getAttribute, value } = infosDoEvento.target;
+    // setValor(
+    //   getAttribute('name'),
+    //   value
+    // );
   }
-
-  // ============
-
-  useEffect(() => {
-    if(window.location.href.includes('localhost')) {
-      const URL = 'http://localhost:8080/categorias'; 
-      fetch(URL)
-       .then(async (respostaDoServer) =>{
-        if(respostaDoServer.ok) {
-          const resposta = await respostaDoServer.json();
-          setCategorias(resposta);
-          return; 
-        }
-        throw new Error('Não foi possível pegar os dados');
-       })
-    }    
-  }, []);
 
   return (
     <PageDefault>
-      <h1>Cadastro de Categoria: {values.nome}</h1>
+      <h1>Cadastro Categoria: {valores.nome}</h1>
 
-      <form onSubmit={function handleSubmit(infosDoEvento) {
-          infosDoEvento.preventDefault();
-
-          setCategorias([
-            ...categorias,
-            values
-          ]);
-
-          setValues(valoresIniciais)
+      <form onSubmit={function handleSubmit(infosDaCategoria) {
+        infosDaCategoria.preventDefault();
+        SetCategorias([
+          ...categorias,
+          valores
+        ]);
       }}>
-
         <FormField
-          label="Nome da Categoria"
+          label="Nome da Categoria:"
           type="text"
           name="nome"
-          value={values.nome}
-          onChange={handleChange}
+          value={valores.nome}
+          onChange={atualizaNome}
         />
-
         <FormField
           label="Descrição:"
-          type="????"
+          type="textarea"
           name="descricao"
-          value={values.descricao}
-          onChange={handleChange}
+          value={valores.descricao}
+          onChange={atualizaNome}
         />
-        {/* <div>
-          <label>
-            Descrição:
-            <textarea
-              type="text"
-              value={values.descricao}
-              name="descricao"
-              onChange={handleChange}
-            />
-          </label>
-        </div> */}
-
         <FormField
-          label="Cor"
+          label="Cor:"
           type="color"
           name="cor"
-          value={values.cor}
-          onChange={handleChange}
+          value={valores.cor}
+          onChange={atualizaNome}
         />
-        {/* <div>
-          <label>
-            Cor:
-            <input
-              type="color"
-              value={values.cor}
-              name="cor"
-              onChange={handleChange}
-            />
-          </label>
-        </div> */}
-
+        
         <button>
           Cadastrar
         </button>
       </form>
-      
 
       <ul>
         {categorias.map((categoria, indice) => {
           return (
             <li key={`${categoria}${indice}`}>
-              {categoria.titulo}
+              {categoria.nome}
             </li>
           )
+
         })}
       </ul>
-
       <Link to="/">
-        Ir para home
-      </Link>
+         Ir para home
+       </Link>
     </PageDefault>
   )
-}
 
-export default CadastroCategoria;
+} export default CadastroCategoria;
+
+
+//   useEffect(() => {
+//     if(window.location.href.includes('localhost')) {
+//       const URL = 'http://localhost:8080/categorias'; 
+//       fetch(URL)
+//        .then(async (respostaDoServer) =>{
+//         if(respostaDoServer.ok) {
+//           const resposta = await respostaDoServer.json();
+//           setCategorias(resposta);
+//           return; 
+//         }
+//         throw new Error('Não foi possível pegar os dados');
+//        })
+//     }    
+//   }, []);

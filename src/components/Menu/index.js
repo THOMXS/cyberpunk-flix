@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Logo from '../../assets/img/Logo.jpg';
 import './Menu.css'
@@ -8,9 +9,9 @@ function Menu(){
     return (
         <header>
             <nav className="Menu">
-                
+                <Link to='/'>
                 <img className="Logo" src= {Logo} alt="Cyber-logo" to ='/'/>
-                  
+                </Link>
                 <Button as={Link} className="ButtonLink" to ="/cadastro/video">
                    Novo Vídeo
                 </Button>
