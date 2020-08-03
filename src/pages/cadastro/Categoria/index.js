@@ -1,8 +1,9 @@
+//eslint-disable-next-line
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import PageDefault from '../../../components/PageDefault';
+import Main from '../../../components/Main';
 import FormField from '../../../components/FormField';
-
+import Button from '../../../components/Button';
 function CadastroCategoria() {
   const [categorias, SetCategorias] = useState([]);
 
@@ -32,7 +33,7 @@ function CadastroCategoria() {
   }
 
   return (
-    <PageDefault>
+    <Main>
       <h1>Cadastro Categoria: {valores.nome}</h1>
 
       <form onSubmit={function handleSubmit(infosDaCategoria) {
@@ -64,9 +65,9 @@ function CadastroCategoria() {
           onChange={atualizaNome}
         />
         
-        <button>
+        <Button>
           Cadastrar
-        </button>
+        </Button>
       </form>
 
       <ul>
@@ -82,7 +83,7 @@ function CadastroCategoria() {
       <Link to="/">
          Ir para home
        </Link>
-    </PageDefault>
+    </Main>
   )
 
 } export default CadastroCategoria;

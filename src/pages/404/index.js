@@ -1,14 +1,14 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
-import PageDefault from '../../components/PageDefault';
+import Main from '../../components/Main';
 
 function Pagina404() {
   return (
      
-     <PageDefault>
+     <Main>
         
         <div>teste</div> 
-     </PageDefault>
+     </Main>
   )
 }
 

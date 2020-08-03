@@ -26,6 +26,8 @@ a {
 } 
 
 #root {
+  font-family: 'Blender Pro Book', sans-serif;
+  font-size: 20px;
   min-height: calc(100vh - var(--bodyPaddingTop));
   background: url("assets/img/Backgroud.jpg") no-repeat right top fixed;
   background-color: var(--black);
