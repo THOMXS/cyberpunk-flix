@@ -1,11 +1,14 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/jsx-no-undef */
+/* eslint-disable react/jsx-indent */
 import React from 'react';
-import SlickSlider from 'react-slider';
+// import SlickSlider from 'react-slider';
 import styled from 'styled-components';
 
-const Container = sytled.ul`
+const Container = styled.ul`
 padding:0;
 margin:0;
-.slick-prev.
+.slick-prev
 .slick-next{
     z-index:50;
     top:0;
@@ -15,7 +18,7 @@ margin:0;
     height:30px;
     transform:initial;
     &:before {
-        font-sive:30px;
+        font-size:30px;
     }
 }
 
@@ -26,7 +29,7 @@ margin:0;
     right:16px;
 }
 `;
-export const SliderItem =styled.li`
+export const SliderItem = styled.li`
     margin-right: 16px;
     img {
         margin:16px;
@@ -35,7 +38,6 @@ export const SliderItem =styled.li`
         object-fit: cover;
     }
 `;
-
 
 const Slider = ({ children }) => (
     <Container>
@@ -51,6 +53,5 @@ const Slider = ({ children }) => (
         {children}
       </SlickSlider>
     </Container>
-  );
-
-  export default Slider;
+);
+export default Slider;

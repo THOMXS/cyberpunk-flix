@@ -60,8 +60,10 @@ body {
   opacity: .5;
 }
 
+
 @media (max-width: 800px) {
   a.ButtonLink {
+    width: auto;
     position: fixed;
     left: 0;
     right: 0;
@@ -70,5 +72,6 @@ body {
     border-radius: 0;
     border: 0;
     text-align: center;
-  }
+    clip-path: polygon(100% 0,100% 100%, 100% 100%,100% 100%,0 100%,0 0);
+  } 
 }
