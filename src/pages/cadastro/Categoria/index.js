@@ -1,9 +1,12 @@
-//eslint-disable-next-line
-import React, { useState, useEffect } from 'react';
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable no-undef */
+// import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Main from '../../../components/Main';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
+
 function CadastroCategoria() {
   const [categorias, SetCategorias] = useState([]);
 
@@ -11,20 +14,21 @@ function CadastroCategoria() {
     nome: '',
     descricao: '',
     cor: '',
-  }
+  };
   const [valores, setValores] = useState(valoresIniciais);
 
   function setValor(chave, valor) {
     setValores({
       ...valores,
       [chave]: valor,
-    })
+    });
   }
   function atualizaNome(infosDoEvento) {
     setValor(
       infosDoEvento.target.getAttribute('name'),
-      infosDoEvento.target.value);
-      
+      infosDoEvento.target.value,
+    );
+
     // const { getAttribute, value } = infosDoEvento.target;
     // setValor(
     //   getAttribute('name'),
@@ -34,15 +38,19 @@ function CadastroCategoria() {
 
   return (
     <Main>
-      <h1>Cadastro Categoria: {valores.nome}</h1>
+      <h1>
+        Cadastro Categoria:
+        {valores.nome}
+      </h1>
 
       <form onSubmit={function handleSubmit(infosDaCategoria) {
         infosDaCategoria.preventDefault();
         SetCategorias([
           ...categorias,
-          valores
+          valores,
         ]);
-      }}>
+      }}
+      >
         <FormField
           label="Nome da Categoria:"
           type="text"
@@ -64,42 +72,37 @@ function CadastroCategoria() {
           value={valores.cor}
           onChange={atualizaNome}
         />
-        
+
         <Button>
           Cadastrar
         </Button>
       </form>
 
       <ul>
-        {categorias.map((categoria, indice) => {
-          return (
-            <li key={`${categoria}${indice}`}>
-              {categoria.nome}
-            </li>
-          )
-
-        })}
+        {categorias.map((categoria, indice) => (
+          <li key={`${categoria}${indice}`}>
+            {categoria.nome}
+          </li>
+        ))}
       </ul>
       <Link to="/">
-         Ir para home
-       </Link>
+        Ir para home
+      </Link>
     </Main>
-  )
-
+  );
 } export default CadastroCategoria;
-
 
 //   useEffect(() => {
 //     if(window.location.href.includes('localhost')) {
-//       const URL = 'http://localhost:8080/categorias'; 
+//       const URL = 'http://localhost:8080/categorias';
 //       fetch(URL)
 //        .then(async (respostaDoServer) =>{
 //         if(respostaDoServer.ok) {
 //           const resposta = await respostaDoServer.json();
 //           setCategorias(resposta);
-//           return; 
+//           return;
 //         }
 //         throw new Error('Não foi possível pegar os dados');
 //        })
-//     }    
+//     }
 //   }, []);

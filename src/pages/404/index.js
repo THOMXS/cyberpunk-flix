@@ -4,12 +4,11 @@ import Main from '../../components/Main';
 
 function Pagina404() {
   return (
-     
-     <Main>
-        
-        <div>teste</div> 
-     </Main>
-  )
+
+    <Main>
+      <div>teste</div>
+    </Main>
+  );
 }
 
-export default Pagina404; 
+export default Pagina404;
