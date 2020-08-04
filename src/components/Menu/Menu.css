@@ -111,7 +111,7 @@ to {
     transform: translate(0)
 }
 }
-/* 
+
 .ButtonLink:hover {
   .ButtonLink::before {
         animation: Button .5s cubic-bezier(.25, .46, .45, .94) both infinite
@@ -119,4 +119,4 @@ to {
     .ButtonLink::after {
         animation: Button .5s cubic-bezier(.25, .46, .45, .94) reverse both infinite
     }
-} */
+}
