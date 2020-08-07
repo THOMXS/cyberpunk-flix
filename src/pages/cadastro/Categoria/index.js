@@ -1,8 +1,10 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable quotes */
+/* eslint-disable quote-props */
 /* eslint-disable no-undef */
-
+/* eslint-disable jsx-quotes */
+/* eslint-disable react/button-has-type */
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Main from '../../../components/Main';
@@ -10,12 +12,12 @@ import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 
 function CadastroCategoria() {
-  const [categorias, SetCategorias] = useState([]);
+  const [categorias, setCategorias] = useState([]);
 
   const valoresIniciais = {
     nome: '',
     descricao: '',
-    cor: '',
+    cor: '#000000',
   };
   const [valores, setValores] = useState(valoresIniciais);
 
@@ -30,24 +32,48 @@ function CadastroCategoria() {
       infosDoEvento.target.getAttribute('name'),
       infosDoEvento.target.value,
     );
-
-    // const { getAttribute, value } = infosDoEvento.target;
-    // setValor(
-    //   getAttribute('name'),
-    //   value
-    // );
   }
+
+  useEffect(() => {
+    console.log('alo alo');
+    const URL_DB = 'http://localhost:8080/categorias';
+    fetch(URL_DB)
+      .then(async (respostaDoServidor) => {
+        const resposta = await respostaDoServidor.json();
+        setCategorias([
+          ...resposta,
+        ]);
+      });
+    // setTimeout(() => {
+    //   setCategorias([
+    //     ...categorias,
+    //     {
+    //       "id": 1,
+    //       "nome": "TESTE",
+    //       "descricao": "Teste descrição",
+    //       "cor": "#cbd1ff",
+    //     },
+    //     {
+    //       "id": 2,
+    //       "nome": "TESTE",
+    //       "descricao": "Teste descrição",
+    //       "cor": "#cbd1ff",
+    //     },
+    //   ]);
+    // }, 3 * 1000);
+  }, []);
 
   return (
     <Main>
       <h1>
         Cadastro Categoria:
+        {' '}
         {valores.nome}
       </h1>
 
       <form onSubmit={function handleSubmit(infosDaCategoria) {
         infosDaCategoria.preventDefault();
-        SetCategorias([
+        setCategorias([
           ...categorias,
           valores,
         ]);
@@ -74,15 +100,20 @@ function CadastroCategoria() {
           value={valores.cor}
           onChange={atualizaNome}
         />
-
-        <Button>
+        <Button to='/'>
           Cadastrar
         </Button>
+
       </form>
 
+      {categorias.length === 0 && (
+      <div>
+        Loading...
+      </div>
+      )}
       <ul>
-        {categorias.map((categoria, indice) => (
-          <li key={`${categoria}${indice}`}>
+        {categorias.map((categoria) => (
+          <li key={`${categoria.nome}`}>
             {categoria.nome}
           </li>
         ))}
@@ -93,18 +124,3 @@ function CadastroCategoria() {
     </Main>
   );
 } export default CadastroCategoria;
-
-//   useEffect(() => {
-//     if(window.location.href.includes('localhost')) {
-//       const URL = 'http://localhost:8080/categorias';
-//       fetch(URL)
-//        .then(async (respostaDoServer) =>{
-//         if(respostaDoServer.ok) {
-//           const resposta = await respostaDoServer.json();
-//           setCategorias(resposta);
-//           return;
-//         }
-//         throw new Error('Não foi possível pegar os dados');
-//        })
-//     }
-//   }, []);

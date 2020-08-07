@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
+/* eslint-disable-next-line react/prop-types */
 import React from 'react';
 
 function Button(props) {

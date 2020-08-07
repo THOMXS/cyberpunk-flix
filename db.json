@@ -1,0 +1,16 @@
+{
+    "categorias": [
+        {
+            "id": 1,
+            "nome": "TESTE",
+            "descricao": "Teste descrição",
+            "cor": "#cbd1ff"
+        },
+        {
+            "id": 2,
+            "nome": "TESTE2",
+            "descricao": "Teste descrição",
+            "cor": "#cbd1ff"
+        }
+    ]
+}

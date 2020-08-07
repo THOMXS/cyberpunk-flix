@@ -41,7 +41,7 @@ body {
 }
 
 .ButtonLink {
-  color: var(--white);
+  color: var(--black);
   border: 1px solid var(--white);
   box-sizing: border-box;
   cursor: pointer;
@@ -55,10 +55,10 @@ body {
   display: inline-block;
   transition: opacity .3s;
 }
-.ButtonLink:hover,
+/* .ButtonLink:hover,
 .ButtonLink:focus {
   opacity: .5;
-}
+} */
 
 
 @media (max-width: 800px) {
@@ -74,49 +74,4 @@ body {
     text-align: center;
     clip-path: polygon(100% 0,100% 100%, 100% 100%,100% 100%,0 100%,0 0);
   }
-}
-  .ButtonLink::before, .ButtonLink::after {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    opacity: .8;
-} .ButtonLink::after {
-    color: #f0f;
-    z-index: -2;
-} .ButtonLink::before {
-    color: #0ff;
-    z-index: -1;
-}
-
-@keyframes ButtonLink {
-0% {
-    transform: translate(0)
-}
-20% {
-    transform: translate(-5px, 5px)
-}
-40% {
-    transform: translate(-5px, -5px)
-}
-60% {
-    transform: translate(5px, 5px)
-}
-80% {
-    transform: translate(5px, -5px)
-}
-to {
-    transform: translate(0)
-}
-}
-
-.ButtonLink:hover {
-  .ButtonLink::before {
-        animation: Button .5s cubic-bezier(.25, .46, .45, .94) both infinite
-    }
-    .ButtonLink::after {
-        animation: Button .5s cubic-bezier(.25, .46, .45, .94) reverse both infinite
-    }
 }
