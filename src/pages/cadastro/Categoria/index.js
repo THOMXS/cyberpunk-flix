@@ -35,6 +35,7 @@ function CadastroCategoria() {
   }
 
   useEffect(() => {
+    // eslint-disable-next-line no-console
     console.log('alo alo');
     const URL_DB = 'http://localhost:8080/categorias';
     fetch(URL_DB)
