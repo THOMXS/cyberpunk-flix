@@ -38,8 +38,8 @@ function CadastroCategoria() {
     // eslint-disable-next-line no-console
     console.log('alo alo');
     const URL_DB = window.location.hostname.includes('localhost')
-    ? 'http://localhost:8080/categorias'
-    : 'http://cyberpunk-flix.herokuapp.com/categorias';
+      ? 'http://localhost:8080/categorias'
+      : 'http://cyberpunk-flix.herokuapp.com/categorias';
     fetch(URL_DB)
       .then(async (respostaDoServidor) => {
         const resposta = await respostaDoServidor.json();
