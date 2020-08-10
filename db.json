@@ -1,16 +1,66 @@
 {
-    "categorias": [
-        {
-            "id": 1,
-            "nome": "TESTE",
-            "descricao": "Teste descrição",
-            "cor": "#cbd1ff"
-        },
-        {
-            "id": 2,
-            "nome": "TESTE2",
-            "descricao": "Teste descrição",
-            "cor": "#cbd1ff"
-        }
-    ]
+  "categorias": [
+    {
+      "nome": "Trailers",
+      "cor": "#feed0a",
+      "descricao": "",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "nome": "Playlist",
+      "descricao": "",
+      "cor": "#feed0a"
+    },
+    {
+      "id": 3,
+      "nome": "Gameplay",
+      "descricao": "",
+      "cor": "#feed0a"
+    },
+    {
+      "id": 4,
+      "nome": "SAMURAI",
+      "descricao": "",
+      "cor": "#feed0a"
+    },
+    {
+      "id": 5,
+      "nome": "Miscellaneous",
+      "descricao": "",
+      "cor": "#feed0a"
+    }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "categoriaId": 1,
+      "titulo": "Trailer Cinematográfico Oficial E3 2019",
+      "url": "https://www.youtube.com/watch?v=qIcTM8WXFjk"
+    },
+    {
+      "id": 2,
+      "categoriaId": 1,
+      "titulo": "Trailer Cinematográfico Oficial E3 2019",
+      "url": "https://www.youtube.com/watch?v=qIcTM8WXFjk"
+    },
+    {
+      "id": 3,
+      "categoriaId": 1,
+      "titulo": "Official Trailer — The Gig",
+      "url": "https://www.youtube.com/watch?v=ixl31324UxE"
+    },
+    {
+      "id": 4,
+      "categoriaId": 1,
+      "titulo": "Trailer E3 2018 Oficial",
+      "url": "https://www.youtube.com/watch?v=8X2kIfS6fb8"
+    },
+    {
+      "id": 5,
+      "categoriaId": 1,
+      "titulo": "Cyberpunk 2077 Teaser Trailer",
+      "url": "https://www.youtube.com/watch?v=P99qJGrPNLs"
+    }   
+  ]
 }

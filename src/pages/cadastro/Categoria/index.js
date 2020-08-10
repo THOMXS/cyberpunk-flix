@@ -1,45 +1,23 @@
-/* eslint-disable quotes */
-/* eslint-disable quote-props */
-/* eslint-disable no-undef */
-/* eslint-disable jsx-quotes */
-/* eslint-disable react/button-has-type */
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Main from '../../../components/Main';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
+import useForm from '../../../hooks/useForm';
 
 function CadastroCategoria() {
-  const [categorias, setCategorias] = useState([]);
-
   const valoresIniciais = {
     nome: '',
     descricao: '',
     cor: '#000000',
   };
-  const [valores, setValores] = useState(valoresIniciais);
+  const [categorias, setCategorias] = useState([]);
+  const { handleChange, valores, clearForm } = useForm(valoresIniciais);
+  const URL_DB = window.location.hostname.includes('localhost')
+    ? 'http://localhost:8080/categorias'
+    : 'http://cyberpunk-flix.herokuapp.com/categorias';
 
-  function setValor(chave, valor) {
-    setValores({
-      ...valores,
-      [chave]: valor,
-    });
-  }
-  function atualizaNome(infosDoEvento) {
-    setValor(
-      infosDoEvento.target.getAttribute('name'),
-      infosDoEvento.target.value,
-    );
-  }
-
-  useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log('alo alo');
-    const URL_DB = window.location.hostname.includes('localhost')
-      ? 'http://localhost:8080/categorias'
-      : 'http://cyberpunk-flix.herokuapp.com/categorias';
+  function updateServer() {
     fetch(URL_DB)
       .then(async (respostaDoServidor) => {
         const resposta = await respostaDoServidor.json();
@@ -47,23 +25,20 @@ function CadastroCategoria() {
           ...resposta,
         ]);
       });
-    // setTimeout(() => {
-    //   setCategorias([
-    //     ...categorias,
-    //     {
-    //       "id": 1,
-    //       "nome": "TESTE",
-    //       "descricao": "Teste descrição",
-    //       "cor": "#cbd1ff",
-    //     },
-    //     {
-    //       "id": 2,
-    //       "nome": "TESTE",
-    //       "descricao": "Teste descrição",
-    //       "cor": "#cbd1ff",
-    //     },
-    //   ]);
-    // }, 3 * 1000);
+  }
+
+  function handleSubmit(infosDaCategoria) {
+    infosDaCategoria.preventDefault();
+    setCategorias([
+      ...categorias,
+      valores,
+    ]);
+
+    clearForm();
+  }
+
+  useEffect(() => {
+    updateServer();
   }, []);
 
   return (
@@ -74,36 +49,29 @@ function CadastroCategoria() {
         {valores.nome}
       </h1>
 
-      <form onSubmit={function handleSubmit(infosDaCategoria) {
-        infosDaCategoria.preventDefault();
-        setCategorias([
-          ...categorias,
-          valores,
-        ]);
-      }}
-      >
+      <form onSubmit={handleSubmit}>
         <FormField
           label="Nome da Categoria:"
           type="text"
           name="nome"
           value={valores.nome}
-          onChange={atualizaNome}
+          onChange={handleChange}
         />
         <FormField
           label="Descrição:"
           type="textarea"
           name="descricao"
           value={valores.descricao}
-          onChange={atualizaNome}
+          onChange={handleChange}
         />
         <FormField
           label="Cor:"
           type="color"
           name="cor"
           value={valores.cor}
-          onChange={atualizaNome}
+          onChange={handleChange}
         />
-        <Button to='/'>
+        <Button>
           Cadastrar
         </Button>
 

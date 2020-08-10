@@ -1,7 +1,7 @@
 {
     "categorias": [
       {
-        "titulo": "Trailers",
+        "nome": "Trailers",
         "link": "",
         "cor": "#feed0a",
         "link_extra": {
@@ -10,29 +10,29 @@
         },
         "videos": [
           {
-            "titulo": "Trailer Cinematográfico Oficial E3 2019",
+            "nome": "Trailer Cinematográfico Oficial E3 2019",
             "url": "https://www.youtube.com/watch?v=qIcTM8WXFjk"
           },
           {
-            "titulo": "Trailer Cinematográfico Oficial E3 2019",
+            "nome": "Trailer Cinematográfico Oficial E3 2019",
             "url": "https://www.youtube.com/watch?v=qIcTM8WXFjk"
           },
           {
-            "titulo": "Official Trailer — The Gig",
+            "nome": "Official Trailer — The Gig",
             "url": "https://www.youtube.com/watch?v=ixl31324UxE"
           },
           {
-            "titulo": " Trailer E3 2018 Oficial",
+            "nome": " Trailer E3 2018 Oficial",
             "url": "https://www.youtube.com/watch?v=8X2kIfS6fb8"
           },
           {
-            "titulo": "Cyberpunk 2077 Teaser Trailer",
+            "nome": "Cyberpunk 2077 Teaser Trailer",
             "url": "https://www.youtube.com/watch?v=P99qJGrPNLs"
           }      
         ]
       },
       {
-        "titulo": "Playlist",
+        "nome": "Playlist",
         "cor": "#feed0a",
         "link_extra": {
           "text": "Cursos de Back End na Alura",
@@ -40,29 +40,29 @@
         },
         "videos": [
           {
-            "titulo": "PERCURSO em NÍVEL em ÁRVORE BINÁRIA | Estruturas de Dados #14",
+            "nome": "PERCURSO em NÍVEL em ÁRVORE BINÁRIA | Estruturas de Dados #14",
             "url": ""
           },
           {
-            "titulo": "Coders4Tips - S01E04: GitHub CLI - Uma Nova Experiência no Github!",
+            "nome": "Coders4Tips - S01E04: GitHub CLI - Uma Nova Experiência no Github!",
             "url": ""
           },
           {
-            "titulo": "Programei 4 robôs que criam vídeos para mim no YouTube",
+            "nome": "Programei 4 robôs que criam vídeos para mim no YouTube",
             "url": ""
           },
           {
-            "titulo": "API: Dicionário do Programador",
+            "nome": "API: Dicionário do Programador",
             "url": ""
           }, 
           {
-            "titulo": "Usando Git Direito",
+            "nome": "Usando Git Direito",
             "url": ""
           }
         ]
       },
       {
-        "titulo": "Gameplay",
+        "nome": "Gameplay",
         "cor": "#feed0a",
         "link_extra": {
           "text": "Cursos de Data Science na Alura",
@@ -70,67 +70,67 @@
         },
         "videos": [
           {
-            "titulo": "Teste de Turing",
+            "nome": "Teste de Turing",
             "url": ""
           },
           {
-            "titulo": "O que é Data Science?",
+            "nome": "O que é Data Science?",
             "url": ""
           },
           {
-            "titulo": "Melhor forma de aprender Python",
+            "nome": "Melhor forma de aprender Python",
             "url": ""
           },
           {
-            "titulo": "Como ingressar no mercado de Data Science?",
+            "nome": "Como ingressar no mercado de Data Science?",
             "url": ""
           }
         ]
       },
       {
-        "titulo": "SAMURAI",
+        "nome": "SAMURAI",
         "cor": "#ff003c",
         "videos": [
           {
-            "titulo": "Chippin’ In by SAMURAI (Refused)",
+            "nome": "Chippin’ In by SAMURAI (Refused)",
             "url": "https://www.youtube.com/watch?v=Igq3d6XA75Y"
           },
           {
-            "titulo": "Never Fade Way",
+            "nome": "Never Fade Way",
             "url": "https://www.youtube.com/watch?v=6IdMp-H9vhA"
           },
           {
-            "titulo": "The Ballad of Buck Ravers",
+            "nome": "The Ballad of Buck Ravers",
             "url": "https://www.youtube.com/watch?v=eLg01e2Je_0&"
           }          
         ]
       },
       {
-        "titulo": "Miscellaneous",
+        "nome": "Miscellaneous",
         "cor": "#feed0a",
         "link_extra": {
-          "titulo": "Como ingressar no mercado de Data Science?",
+          "nome": "Como ingressar no mercado de Data Science?",
           "url": ""
         },
         "videos": [
           {
-            "titulo": "Como ingressar no mercado de Data Science?",
+            "nome": "Como ingressar no mercado de Data Science?",
             "url": ""
           },
           {
-            "titulo": "Como ingressar no mercado de Data Science?",
+            "nome": "Como ingressar no mercado de Data Science?",
             "url": ""
           },
           {
-            "titulo": "Como ingressar no mercado de Data Science?",
+            "nome": "Como ingressar no mercado de Data Science?",
             "url": ""
           },
           {
-            "titulo": "Como ingressar no mercado de Data Science?",
+            "nome": "Como ingressar no mercado de Data Science?",
             "url": ""
           },
           {
-            "titulo": "Como ingressar no mercado de Data Science?",
+            "nome": "Como ingressar no mercado de Data Science?",
             "url": ""
           }
         ]

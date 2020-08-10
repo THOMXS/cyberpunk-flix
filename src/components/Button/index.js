@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
-const Button = styled(Link)`
+const Button = styled.button`
   width: 230px;
   height: 60px; 
   border: 0;
